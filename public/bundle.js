@@ -21474,21 +21474,212 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Home = __webpack_require__(173);
+
+	var _Home2 = _interopRequireDefault(_Home);
+
+	var _About = __webpack_require__(174);
+
+	var _About2 = _interopRequireDefault(_About);
+
+	var _Blog = __webpack_require__(175);
+
+	var _Blog2 = _interopRequireDefault(_Blog);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var App = function App() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(Menu, { active: 'home' })
+	  );
+	};
+
+	var Menu = function (_React$Component) {
+	  _inherits(Menu, _React$Component);
+
+	  function Menu(props) {
+	    _classCallCheck(this, Menu);
+
+	    var _this = _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).call(this, props));
+
+	    _this.state = {
+	      active: props.active
+	    };
+
+	    _this.togglePage = _this.togglePage.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(Menu, [{
+	    key: 'togglePage',
+	    value: function togglePage(e) {
+	      var page = e.target.text;
+	      console.log(page);
+
+	      this.setState({ active: page });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var page = void 0;
+
+	      switch (this.state.active) {
+	        case 'Home':
+	          page = _react2.default.createElement(_Home2.default, null);
+	          break;
+	        case 'About':
+	          page = _react2.default.createElement(_About2.default, null);
+	          break;
+	        case 'Blog':
+	          page = _react2.default.createElement(_Blog2.default, null);
+	          break;
+	      }
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        'active: ',
+	        this.props.active,
+	        _react2.default.createElement(
+	          'ul',
+	          null,
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              'a',
+	              { onClick: this.togglePage },
+	              'Home'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              'a',
+	              { onClick: this.togglePage },
+	              'About'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              'a',
+	              { onClick: this.togglePage },
+	              'Blog'
+	            )
+	          )
+	        ),
+	        page
+	      );
+	    }
+	  }]);
+
+	  return Menu;
+	}(_react2.default.Component);
+
+	exports.default = App;
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var App = function App() {
+	var Home = function Home() {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    'something cool'
+	    'Home'
 	  );
 	};
 
-	exports.default = App;
+	exports.default = Home;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var About = function About() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'h2',
+	      null,
+	      'About'
+	    ),
+	    _react2.default.createElement(
+	      'p',
+	      null,
+	      'My name is Josh'
+	    )
+	  );
+	};
+
+	exports.default = About;
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Blog = function Blog() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    'Blog'
+	  );
+	};
+
+	exports.default = Blog;
 
 /***/ }
 /******/ ]);
